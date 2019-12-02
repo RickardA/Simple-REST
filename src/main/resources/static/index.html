@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Rest</title>
+</head>
+<body>
+    <h1>Consuming the simple REST-API</h1>
+    <h3>To perform simple CRUD operations follow the simple steps below</h3>
+    <ul>
+        <li>
+            <h3>Create a movie</h3>
+            <ul>
+                <li>
+                    <b>Request Type</b><br>
+                    Post
+                </li>
+                <li>
+                    <b>URL Path</b><br>
+                    /api/movies
+                </li>
+                <li>
+                    <b>Body</b><br>
+                    object containing the following properties, no property is required<br>
+                    {<br>
+                        title: String,<br>
+                        rating: float,<br>
+                        description: String,<br>
+                        imageUrl: String<br>
+                    }
+                </li>
+                <li>
+                    <b>Returns</b><br>
+                    <b>Success:</b><br>
+                    Status Code: 201, Body: The saved movie.<br>
+                    <b>Error:</b><br>
+                    Status Code: 500, Body: Nothing.
+                </li>
+            </ul>
+        </li>
+        <li>
+            <h3>Get all movies</h3>
+            <ul>
+                <li>
+                    <b>Request Type</b><br>
+                    Get
+                </li>
+                <li>
+                    <b>URL Path</b><br>
+                    /api/movies
+                </li>
+                <li>
+                    <b>Returns</b><br>
+                    <b>Success:</b><br>
+                    Status Code: 200, Body: Array of all movies.<br>
+                    <b>If no movies exists:</b><br>
+                    Status Code: 204, Body: Nothing.<br>
+                    <b>Error:</b><br>
+                    Status Code: 500, Body: Nothing.
+                </li>
+            </ul>
+        </li>
+        <li>
+            <h3>Get movie by id</h3>
+            <ul>
+                <li>
+                    <b>Request Type</b><br>
+                    Get
+                </li>
+                <li>
+                    <b>URL Path</b><br>
+                    /api/movies/[putMovieIdHere]
+                </li>
+                <li>
+                    <b>Returns</b><br>
+                    <b>Success:</b><br>
+                    Status Code: 200, Body: Requested movie.<br>
+                    <b>If movie does not exist:</b><br>
+                    Status Code: 204, Body: Nothing.<br>
+                    <b>Error:</b><br>
+                    Status Code: 500, Body: Nothing.
+                </li>
+            </ul>
+        </li>
+        <li>
+            <h3>Update a movie by id</h3>
+            <ul>
+                <li>
+                    <b>Request Type</b><br>
+                    Put
+                </li>
+                <li>
+                    <b>URL Path</b><br>
+                    /api/movies
+                </li>
+                <li>
+                    <b>Body</b><br>
+                    Get existing movie and use following object structure, change properties you want to change and make a put request<br>
+                    {<br>
+                    _id: String,<br>
+                    title: String,<br>
+                    rating: float,<br>
+                    description: String,<br>
+                    imageUrl: String<br>
+                    }
+                </li>
+                <li>
+                    <b>Returns</b><br>
+                    <b>Success:</b><br>
+                    Status Code: 200, Body: Updated movie<br>
+                    <b>If no movie exists:</b><br>
+                    Status Code: 400, Body: Nothing.<br>
+                    <b>Error:</b><br>
+                    Status Code: 500, Body: Nothing.
+                </li>
+            </ul>
+        </li>
+        <li>
+            <h3>Delete movie by id</h3>
+            <ul>
+                <li>
+                    <b>Request Type</b><br>
+                    Delete
+                </li>
+                <li>
+                    <b>URL Path</b><br>
+                    /api/movies/[putMovieIdHere]
+                </li>
+                <li>
+                    <b>Returns</b><br>
+                    <b>Success:</b><br>
+                    Status Code: 200, Body: Nothing<br>
+                    <b>If movie does not exist:</b><br>
+                    Status Code: 200, Body: Nothing.<br>
+                    <b>Error:</b><br>
+                    Status Code: 500, Body: Nothing.
+                </li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>
